@@ -124,18 +124,10 @@
   </style>
 </head>
 <body>
- <section class="noticeSec">
-    <div class="container">
-        <div class="noticeCon">
-            <marquee class="mb-0">
-               Technical Support : Monday to Saturday (10:00 AM to 05:00 PM), For any Queries call - +91 9863404623, DCA First Term Exam Result will be Publish Now. But, First your Exam Complete, after result will be Declare Soon with in 1 Week
-            </marquee>
-        </div>
-    </div>
        <div class="notice-board">
     <body>
   <div class="login-container">
-    <h2>Login to Student Panel</h2>
+    <h2>Login to Our Panel</h2>
     <form id="loginForm">
       <div class="error" id="errorMsg">Login ID and Password : 1234</div>
       <input type="text" id="username" placeholder="Username" required />
@@ -190,14 +182,14 @@
 </head>
 <body>
 
-  <h1>Check Student Payment Status</h1>
-  <input type="text" id="studentIdInput" placeholder="Enter Student ID">
+  <h1>Check Application Status</h1>
+  <input type="text" id="studentIdInput" placeholder="Enter Application ID">
   <button onclick="checkPaymentStatus()">Check Status</button>
 
   <table id="studentTable">
     <thead>
       <tr>
-        <th>Student ID</th>
+        <th>Application ID</th>
         <th>Name</th>
         <th>Payment Status</th>
       </tr>
@@ -210,7 +202,7 @@
   <script>
     // Example student data
     const students = [
-      { id: "EX101", name: "Punam Gour", status: "Paid (1 Month)" },
+      { id: "202501", name: "Sangita Das", status: "RRB NTPC Admit Card Download" },
       { id: "S002", name: "Bob Smith", status: "Pending" },
       { id: "S003", name: "Clara Lopez", status: "Paid" },
       { id: "S004", name: "David Kim", status: "Unpaid" }
@@ -224,11 +216,11 @@
       const filtered = students.filter(student => student.id.includes(input));
 
       if (filtered.length === 0) {
-        tableBody.innerHTML = `<tr><td colspan="3">No matching student found.</td></tr>`;
+        tableBody.innerHTML = `<tr><td colspan="3">No matching found.</td></tr>`;
       } else {
         filtered.forEach(student => {
           const row = `<tr>
-            <td>${student.id}</td>
+            <td>${application.id}</td>
             <td>${student.name}</td>
             <td>${student.status}</td>
           </tr>`;
@@ -241,9 +233,7 @@
     <div class="container">
         <div class="noticeCon">
             <marquee class="mb-0">
-                Government of Tripura Health & Family Welfare Department National
-                Health Mission State Health & Family Welfare Society Tripura Palace
-                Compound, Agartala
+ Payment Screenshot Share our Whatsapp Number (+91 9863404623)
             </marquee>
         </div>
     </div>
@@ -253,7 +243,7 @@
 </head>
 <body>
   <div class="container">
-    <h2>Student Payment Portal</h2>
+    <h2>Payment Portal</h2>
 
     <label for="rollNo">Enter Roll Number:</label>
     <input type="text" id="rollNo" placeholder="e.g., 20250123">
@@ -277,7 +267,7 @@
 
       if (!rollNo || !paymentMethod) {
         detailsDiv.style.display = 'block';
-        detailsDiv.innerHTML = "<strong>Please enter a roll number and select a payment method.</strong>";
+        detailsDiv.innerHTML = "<strong>Please enter a Application ID and select a payment method.</strong>";
         return;
       }
 
@@ -291,7 +281,7 @@
 
       detailsDiv.style.display = 'block';
       detailsDiv.innerHTML = `
-        <strong>Roll Number:</strong> ${rollNo}<br>
+        <strong>Application ID:</strong> ${rollNo}<br>
         <strong>Selected Method:</strong> ${paymentMethod.toUpperCase()}<br>
         <strong>Details:</strong> ${methodDetails}
       `;
