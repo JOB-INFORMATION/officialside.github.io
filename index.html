@@ -1,75 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Job Board</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Our Team - Careers</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
       background-color: #f4f4f4;
+      color: #333;
     }
     header {
-      background-color: #333;
-      color: #fff;
-      padding: 1em 2em;
+      background-color: #007BFF;
+      color: white;
+      padding: 20px;
       text-align: center;
     }
     .container {
-      padding: 2em;
-      max-width: 800px;
+      padding: 40px 20px;
+      max-width: 1000px;
       margin: auto;
-      background-color: #fff;
+      background: white;
     }
     h2 {
-      margin-top: 0;
+      color: #007BFF;
     }
-    form {
-      margin-bottom: 2em;
-    }
-    input, textarea, button {
-      display: block;
-      width: 100%;
-      margin-bottom: 1em;
-      padding: 0.75em;
-    }
-    .job-post {
+    .job-listing {
       border: 1px solid #ccc;
-      padding: 1em;
-      margin-bottom: 1em;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
     }
-    .job-post h3 {
-      margin: 0 0 0.5em 0;
+    .job-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .apply-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Job Board</h1>
-</header>
+  <header>
+    <h1>We're Hiring!</h1>
+    <p>Join our team and make an impact</p>
+  </header>
 
-<div class="container">
-  <h2>Post a New Job</h2>
-  <form id="jobForm">
-    <input type="text" id="title" placeholder="Job Title" required>
-    <input type="text" id="company" placeholder="Company Name" required>
-    <textarea id="description" placeholder="Job Description" rows="5" required></textarea>
-    <button type="submit">Post Job</button>
-  </form>
+  <div class="container">
+    <h2>Open Positions</h2>
 
-  <h2>Available Jobs</h2>
-  <div id="jobList">
-    <div class="job-post">
-      <h3>Frontend Developer</h3>
-      <p><strong>Company:</strong> Tech Solutions</p>
-      <p>Looking for a skilled frontend developer proficient in HTML, CSS, and JavaScript.</p>
+    <div class="job-listing">
+      <div class="job-title">Frontend Developer</div>
+      <p>We are looking for a creative frontend developer to build amazing user experiences.</p>
+      <a href="mailto:hr@example.com?subject=Application for Frontend Developer" class="apply-button">Apply Now</a>
     </div>
-    <!-- New job posts will appear here if using JavaScript -->
+
+    <div class="job-listing">
+      <div class="job-title">Backend Engineer</div>
+      <p>Help us develop and scale backend services and APIs to power our platform.</p>
+      <a href="mailto:hr@example.com?subject=Application for Backend Engineer" class="apply-button">Apply Now</a>
+    </div>
+
+    <div class="job-listing">
+      <div class="job-title">UX/UI Designer</div>
+      <p>Design intuitive and delightful interfaces that users love.</p>
+      <a href="mailto:hr@example.com?subject=Application for UX/UI Designer" class="apply-button">Apply Now</a>
+    </div>
   </div>
-</div>
+
+  <footer>
+    &copy; 2025 Your Company Name. All rights reserved.
+  </footer>
 
 </body>
 </html>
