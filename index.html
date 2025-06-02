@@ -183,7 +183,7 @@
 <body>
 
   <h1>Check Application Status</h1>
-  <input type="text" id="studentIdInput" placeholder="Enter Application ID">
+  <input type="text" id="applicationIdInput" placeholder="Enter Application ID">
   <button onclick="checkPaymentStatus()">Check Status</button>
 
   <table id="studentTable">
@@ -191,7 +191,7 @@
       <tr>
         <th>Application ID</th>
         <th>Name</th>
-        <th>Payment Status</th>
+        <th>Status</th>
       </tr>
     </thead>
     <tbody id="tableBody">
@@ -209,11 +209,11 @@
     ];
 
     function checkPaymentStatus() {
-      const input = document.getElementById("studentIdInput").value.trim().toUpperCase();
+      const input = document.getElementById("applicationIdInput").value.trim().toUpperCase();
       const tableBody = document.getElementById("tableBody");
       tableBody.innerHTML = ""; // Clear previous results
 
-      const filtered = students.filter(application => application.id.includes(input));
+      const filtered = application.filter(application => application.id.includes(input));
 
       if (filtered.length === 0) {
         tableBody.innerHTML = `<tr><td colspan="3">No matching found.</td></tr>`;
@@ -221,8 +221,8 @@
         filtered.forEach(student => {
           const row = `<tr>
             <td>${application.id}</td>
-            <td>${student.name}</td>
-            <td>${student.status}</td>
+            <td>${application.name}</td>
+            <td>${application.status}</td>
           </tr>`;
           tableBody.innerHTML += row;
         });
