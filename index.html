@@ -180,52 +180,6 @@
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h2>Payment Portal</h2>
-
-    <label for="rollNo">Enter Application ID:</label>
-    <input type="text" id="applicationId" placeholder="e.g., 20250123">
-
-    <label for="paymentMethod">Select Payment Method:</label>
-    <select id="paymentMethod">
-      <option value="">-- Select --</option>
-      <option value="upi">UPI</option>
-    </select>
-
-    <button onclick="showDetails()">Get Payment Details</button>
-
-    <div class="result" id="paymentDetails" style="display: none;"></div>
-  </div>
-
-  <script>
-    function showDetails() {
-      const rollNo = document.getElementById('rollNo').value.trim();
-      const paymentMethod = document.getElementById('paymentMethod').value;
-      const detailsDiv = document.getElementById('paymentDetails');
-
-      if (!rollNo || !paymentMethod) {
-        detailsDiv.style.display = 'block';
-        detailsDiv.innerHTML = "<strong>Please enter a Application ID and select a payment method.</strong>";
-        return;
-      }
-
-      let methodDetails = "";
-
-      switch (paymentMethod) {
-        case "upi":
-          methodDetails = "Pay instantly via UPI (PAYTM) apps (Paytm ID - 9863404623@ptsbi.). No extra charges. But Payment Screenshot Share via Whatsapp No - 9863404623.";
-          break;
-      }
-
-      detailsDiv.style.display = 'block';
-      detailsDiv.innerHTML = `
-        <strong>Application ID:</strong> ${rollNo}<br>
-        <strong>Selected Method:</strong> ${paymentMethod.toUpperCase()}<br>
-        <strong>Details:</strong> ${methodDetails}
-      `;
-    }
-  </script>
   <footer>
     &copy; 2025 CSC Digital. All rights reserved.
   </footer>
