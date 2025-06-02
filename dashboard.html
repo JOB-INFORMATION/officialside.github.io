@@ -16,7 +16,7 @@
   </style>
 </head>
 <body>
-  <h1>Welcome to Exam Portal!</h1>
+  <h1>Welcome to Job Panel!</h1>
   <p><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,14 +86,14 @@
         }
     </style>
 <header>
-    <h1><FONT COLOR="WHITE">Digital Computer  Academy, Agartala</FONT></h1>
+    <h1><FONT COLOR="WHITE">Job Information Center, Agartala</FONT></h1>
     <p>For Any Others Inquirey. Please Contact Our Support Team, 9863404623</p>
 </header>
 <section class="noticeSec">
     <div class="container">
         <div class="noticeCon">
             <marquee class="mb-0">
-                Enter your roll number, Match your Data, Select your exam and Screenshot this page with application Id. Screenshot Share Your Exam Cordinate
+                Enter your Application ID, Select Post, Print or Screenshot this page with application Id. Screenshot Share our Cordinate
             </marquee>
         </div>
     </div>
@@ -111,16 +111,16 @@
 </section>
  </font>
 </nav>
-  <h2>Enter Roll Number</h2>
-  <input type="text" id="rollNoInput" placeholder="Enter Roll Number" />
-  <button onclick="generateForm()">Show Exam Form</button>
+  <h2>New Post Apply</h2>
+  <input type="text" id="rollNoInput" placeholder="Enter Application ID" />
+  <button onclick="generateForm()">Show Application Form</button>
 
   <div id="examForm" class="form-container" style="display:none;"></div>
 
   <script>
     // Sample student data (simulate a database)
     const students = {
-      'EX101': { name: 'Punam Gour', course: 'DCA', year: '12 Months' },
+      '202501': { name: 'Sangita Das', course: 'DCA', year: '12 Months' },
       '102': { name: 'Bob Smith', course: 'B.A History', year: '3rd Year' },
       '103': { name: 'Charlie Brown', course: 'B.Com', year: '1st Year' }
     };
@@ -142,7 +142,7 @@
 
       const student = students[rollNo];
       if (!student) {
-        alert('No student found with this roll number.');
+        alert('No student found with this application Id.');
         formDiv.style.display = 'none';
         return;
       }
@@ -152,19 +152,16 @@
       formDiv.style.display = 'block';
       formDiv.innerHTML = `
         <h3>Exam Form</h3>
-        <p><strong>Application ID:</strong> ${appId}</p>
-        <p><strong>Roll Number:</strong> ${rollNo}</p>
+        <p><strong>Post ID:</strong> ${appId}</p>
+        <p><strong>Application ID:</strong> ${rollNo}</p>
         <p><strong>Name:</strong> ${student.name}</p>
         <p><strong>Course:</strong> ${student.course}</p>
         <p><strong>Duration:</strong> ${student.year}</p>
         
-        <label for="examSubject">Select Exam:</label>
+        <label for="examSubject">Select Post:</label>
         <select id="examSubject">
-          <option value="Maths">DCA First Term Examination 2025</option>
-          <option value="Physics">DCA Second Term Examination 2025</option>
-          <option value="Chemistry">DCA Third Term Examination 2025</option>
-          <option value="History">DCA Fourth Term Examination 2025</option>
-          <option value="Economics">DCA Final 2025-26</option>
+          <option value="Maths">Tripura High Court (Goup-D) 2025</option>
+          <option value="Physics">Tripura High Court LDC 2025</option>
         </select>
         
         <button onclick="printForm()">Print Form</button>
@@ -186,9 +183,9 @@
  <script>
     // Simulated backend data
     const examData = {
-      'EX119': [
-        { exam: 'First Term (Back)', applicationId: '10-06-2025' },
-        { exam: 'Second Term', applicationId: 'Exam Date not Found' }
+      '202501': [
+        { exam: 'RRB NTPC (Graduate)', applicationId: 'Download your Admit Card and Attend your  Exam' },
+        { exam: 'RRB NTPC (UG)', applicationId: 'Under Process' }
       ],
       'EX121': [
         { exam: 'First Term (Back)', applicationId: '10-06-2025' }
@@ -201,7 +198,7 @@
       const appIdDisplay = document.getElementById('appId');
 
       // Clear previous values
-      examSelect.innerHTML = '<option value="">-- Select Exam --</option>';
+      examSelect.innerHTML = '<option value="">-- Select Post --</option>';
       appIdDisplay.textContent = '';
 
       if (examData[rollNo]) {
@@ -212,7 +209,7 @@
           examSelect.add(option);
         });
       } else {
-        alert('No exams found for this roll number.');
+        alert('No post found for this application number.');
       }
     }
 
@@ -231,22 +228,22 @@
     <div class="container">
         <div class="noticeCon">
             <marquee class="mb-0">
-               Exam Form now Live (Last Date : 15/07/2025)
+               RRB NTPC-G now Live (Post Date : 02/06/2025)
             </marquee>
         </div>
     </div>
 </section>
-  <h2>Enter Roll Number to Get Exam Date</h2>
+  <h2>Enter ID to Get Application Status</h2>
   
-  <label for="rollNo">Roll Number:</label>
+  <label for="rollNo">Application ID:</label>
   <input type="text" id="rollNo" name="rollNo">
-  <button onclick="getExams()">Get Exams</button>
+  <button onclick="getExams()">Get Status</button>
   
   <br><br>
   
-  <label for="examSelect">Select Exam:</label>
+  <label for="examSelect">Select Post:</label>
   <select id="examSelect" onchange="showAppId()">
-    <option value="">-- Select Exam --</option>
+    <option value="">-- Select Post --</option>
   </select>
   
   <p id="appId"></p>
@@ -291,7 +288,7 @@
     <div class="container">
         <div class="noticeCon">
             <marquee class="mb-0">
-               Admit card will be auto generate with in 10 Days before your Exam. For any Inquiry, Please contact our support  Team. Contact No 9863404623
+               For any Inquiry, Please contact our support  Team. Contact No 9863404623
             </marquee>
         </div>
     </div>
