@@ -181,57 +181,6 @@
   </style>
 </head>
 <body>
-
-  <h1>Check Application Status</h1>
-  <input type="text" id="applicationIdInput" placeholder="Enter Application ID">
-  <button onclick="checkPaymentStatus()">Check Status</button>
-
-  <table id="studentTable">
-    <thead>
-      <tr>
-        <th>Application ID</th>
-        <th>Name</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody id="tableBody">
-      <!-- Rows will be inserted here -->
-    </tbody>
-  </table>
-
-  <script>
-    // Example student data
-    const students = [
-      { id: "202501", name: "Sangita Das", status: "RRB NTPC Admit Card Download" },
-      { id: "S002", name: "Bob Smith", status: "Pending" },
-      { id: "S003", name: "Clara Lopez", status: "Paid" },
-      { id: "S004", name: "David Kim", status: "Unpaid" }
-    ];
-
-    function checkPaymentStatus() {
-      const input = document.getElementById("applicationIdInput").value.trim().toUpperCase();
-      const tableBody = document.getElementById("tableBody");
-      tableBody.innerHTML = ""; // Clear previous results
-
-      const filtered = application.filter(application => application.id.includes(input));
-
-      if (filtered.length === 0) {
-        tableBody.innerHTML = `<tr><td colspan="3">No matching found.</td></tr>`;
-      } else {
-        filtered.forEach(student => {
-          const row = `<tr>
-            <td>${application.id}</td>
-            <td>${application.name}</td>
-            <td>${application.status}</td>
-          </tr>`;
-          tableBody.innerHTML += row;
-        });
-      }
-    }
-  </script>
-</body>
-</head>
-<body>
   <div class="container">
     <h2>Payment Portal</h2>
 
