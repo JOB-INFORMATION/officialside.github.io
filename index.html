@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job Board</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1em 2em;
+      text-align: center;
+    }
+    .container {
+      padding: 2em;
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    form {
+      margin-bottom: 2em;
+    }
+    input, textarea, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1em;
+      padding: 0.75em;
+    }
+    .job-post {
+      border: 1px solid #ccc;
+      padding: 1em;
+      margin-bottom: 1em;
+    }
+    .job-post h3 {
+      margin: 0 0 0.5em 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Job Board</h1>
+</header>
+
+<div class="container">
+  <h2>Post a New Job</h2>
+  <form id="jobForm">
+    <input type="text" id="title" placeholder="Job Title" required>
+    <input type="text" id="company" placeholder="Company Name" required>
+    <textarea id="description" placeholder="Job Description" rows="5" required></textarea>
+    <button type="submit">Post Job</button>
+  </form>
+
+  <h2>Available Jobs</h2>
+  <div id="jobList">
+    <div class="job-post">
+      <h3>Frontend Developer</h3>
+      <p><strong>Company:</strong> Tech Solutions</p>
+      <p>Looking for a skilled frontend developer proficient in HTML, CSS, and JavaScript.</p>
+    </div>
+    <!-- New job posts will appear here if using JavaScript -->
+  </div>
+</div>
+
+</body>
+</html>
