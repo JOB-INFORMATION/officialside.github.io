@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .notice-board {
+      max-width: 700px;
+      margin: 50px auto;
+      background: #fff8dc;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border: 2px solid #ffa500;
+    }
+
+    .notice-board h2 {
+      text-align: center;
+      color: #d2691e;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .notice {
+      padding: 10px;
+      margin: 10px 0;
+      background: #fff;
+      border-left: 5px solid #ffa500;
+      box-shadow: 1px 1px 5px rgba(0,0,0,0.05);
+    }
+
+    .notice-date {
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    .notice-content {
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+ <section class="noticeSec">
+    <div class="container">
+        <div class="noticeCon">
+            <marquee class="mb-0">
+               Technical Support : Monday to Saturday (10:00 AM to 05:00 PM), For any Queries call - +91 9863404623, DCA First Term Exam Result will be Publish Now. But, First your Exam Complete, after result will be Declare Soon with in 1 Week
+            </marquee>
+        </div>
+    </div>
+       <div class="notice-board">
+    <body>
+  <div class="login-container">
+    <h2>Login to Student Panel</h2>
+    <form id="loginForm">
+      <div class="error" id="errorMsg">Login ID and Password : 1234</div>
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const errorMsg = document.getElementById('errorMsg');
+
+    loginForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      // Simple hardcoded check - replace with your own authentication logic
+      if (username === '1234' && password === '1234') {
+        // Redirect to dashboard page
+        window.location.href = 'dashboard.html';
+      } else {
+        // Show error message
+        errorMsg.style.display = 'block';
+      }
+    });
+  </script>
+      <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    input {
+      padding: 8px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Check Student Payment Status</h1>
+  <input type="text" id="studentIdInput" placeholder="Enter Student ID">
+  <button onclick="checkPaymentStatus()">Check Status</button>
+
+  <table id="studentTable">
+    <thead>
+      <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Payment Status</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <!-- Rows will be inserted here -->
+    </tbody>
+  </table>
+
+  <script>
+    // Example student data
+    const students = [
+      { id: "EX101", name: "Punam Gour", status: "Paid (1 Month)" },
+      { id: "S002", name: "Bob Smith", status: "Pending" },
+      { id: "S003", name: "Clara Lopez", status: "Paid" },
+      { id: "S004", name: "David Kim", status: "Unpaid" }
+    ];
+
+    function checkPaymentStatus() {
+      const input = document.getElementById("studentIdInput").value.trim().toUpperCase();
+      const tableBody = document.getElementById("tableBody");
+      tableBody.innerHTML = ""; // Clear previous results
+
+      const filtered = students.filter(student => student.id.includes(input));
+
+      if (filtered.length === 0) {
+        tableBody.innerHTML = `<tr><td colspan="3">No matching student found.</td></tr>`;
+      } else {
+        filtered.forEach(student => {
+          const row = `<tr>
+            <td>${student.id}</td>
+            <td>${student.name}</td>
+            <td>${student.status}</td>
+          </tr>`;
+          tableBody.innerHTML += row;
+        });
+      }
+    }
+  </script>
+  <section class="noticeSec">
+    <div class="container">
+        <div class="noticeCon">
+            <marquee class="mb-0">
+                Government of Tripura Health & Family Welfare Department National
+                Health Mission State Health & Family Welfare Society Tripura Palace
+                Compound, Agartala
+            </marquee>
+        </div>
+    </div>
+</section>
+
+</body>
+</head>
+<body>
+  <div class="container">
+    <h2>Student Payment Portal</h2>
+
+    <label for="rollNo">Enter Roll Number:</label>
+    <input type="text" id="rollNo" placeholder="e.g., 20250123">
+
+    <label for="paymentMethod">Select Payment Method:</label>
+    <select id="paymentMethod">
+      <option value="">-- Select --</option>
+      <option value="upi">UPI</option>
+    </select>
+
+    <button onclick="showDetails()">Get Payment Details</button>
+
+    <div class="result" id="paymentDetails" style="display: none;"></div>
+  </div>
+
+  <script>
+    function showDetails() {
+      const rollNo = document.getElementById('rollNo').value.trim();
+      const paymentMethod = document.getElementById('paymentMethod').value;
+      const detailsDiv = document.getElementById('paymentDetails');
+
+      if (!rollNo || !paymentMethod) {
+        detailsDiv.style.display = 'block';
+        detailsDiv.innerHTML = "<strong>Please enter a roll number and select a payment method.</strong>";
+        return;
+      }
+
+      let methodDetails = "";
+
+      switch (paymentMethod) {
+        case "upi":
+          methodDetails = "Pay instantly via UPI (PAYTM) apps (Paytm ID - 9863404623@ptsbi.). No extra charges. But Payment Screenshot Share via Whatsapp No - 9863404623.";
+          break;
+      }
+
+      detailsDiv.style.display = 'block';
+      detailsDiv.innerHTML = `
+        <strong>Roll Number:</strong> ${rollNo}<br>
+        <strong>Selected Method:</strong> ${paymentMethod.toUpperCase()}<br>
+        <strong>Details:</strong> ${methodDetails}
+      `;
+    }
+  </script>
+</body>
