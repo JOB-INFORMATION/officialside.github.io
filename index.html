@@ -213,7 +213,7 @@
       const tableBody = document.getElementById("tableBody");
       tableBody.innerHTML = ""; // Clear previous results
 
-      const filtered = students.filter(student => student.id.includes(input));
+      const filtered = students.filter(application => application.id.includes(input));
 
       if (filtered.length === 0) {
         tableBody.innerHTML = `<tr><td colspan="3">No matching found.</td></tr>`;
@@ -245,7 +245,7 @@
   <div class="container">
     <h2>Payment Portal</h2>
 
-    <label for="rollNo">Enter Roll Number:</label>
+    <label for="rollNo">Enter Application ID:</label>
     <input type="text" id="rollNo" placeholder="e.g., 20250123">
 
     <label for="paymentMethod">Select Payment Method:</label>
